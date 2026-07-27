@@ -120,24 +120,38 @@ class BirthdayStory {
         }
     }
 
-    setupAudioMusic() {
-        this.music = document.getElementById('bgMusic');
-        if (!this.music) return;
+setupAudioMusic() {
+    this.music = document.getElementById('bgMusic');
+    if (!this.music) return;
 
-        // Try to autoplay
-        if (config.music.autoplay) {
-            const playPromise = this.music.play();
-            if (playPromise !== undefined) {
-                playPromise
-                    .then(() => {
-                        this.isMuted = false;
-                    })
-                    .catch(() => {
-                        // Autoplay was prevented, show play button
-                        this.showPlayButton();
-                    });
-            }
-        }
+    this.music.loop = true;
+    this.music.volume = 1;
+
+    // প্রথমে autoplay চেষ্টা করবে (যদি browser allow করে)
+    if (config.music.autoplay) {
+        this.music.play()
+            .then(() => {
+                this.isMuted = false;
+                this.updateMusicButton();
+            })
+            .catch(() => {
+                // Browser block করলে প্রথম click/touch এ music চালু হবে
+                const startMusic = () => {
+                    this.music.play()
+                        .then(() => {
+                            this.isMuted = false;
+                            this.updateMusicButton();
+                        })
+                        .catch(() => {});
+
+                    document.removeEventListener('click', startMusic);
+                    document.removeEventListener('touchstart', startMusic);
+                };
+
+                document.addEventListener('click', startMusic, { once: true });
+                document.addEventListener('touchstart', startMusic, { once: true });
+            });
+    }
     }
 
     setupYouTubeMusic() {
