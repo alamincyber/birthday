@@ -10,7 +10,6 @@ const config = {
     person: {
         name: "Al Amin",
         dateOfBirth: "February 21",
-        age: "23"
     },
 
     // ========================================
@@ -46,6 +45,7 @@ const config = {
     content: {
         // Page 1
         openingTitle: "Happy Birthday To You ❤️",
+        openingTitle: "My dear Al Amin ",
 
         // Page 2
         page2: {
