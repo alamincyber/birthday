@@ -45,7 +45,6 @@ const config = {
     content: {
         // Page 1
         openingTitle: "Happy Birthday To You ❤️",
-        openingTitle: "My dear Al Amin ",
 
         // Page 2
         page2: {
