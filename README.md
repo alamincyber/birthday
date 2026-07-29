@@ -68,9 +68,8 @@ Open `js/config.js` and update the person section:
 
 ```javascript
 person: {
-    name: "John's Name",          // Change to the birthday person's name
-    dateOfBirth: "January 15",    // Their date of birth
-    age: 25,                       // Their age
+    name: "Al Amin",          // Change to the birthday person's name
+    dateOfBirth: "February 21",    // Their date of birth
 },
 ```
 
