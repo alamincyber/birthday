@@ -8,8 +8,9 @@ const config = {
     // Person Information
     // ========================================
     person: {
-        name: "Rupali Sen",
-        dateOfBirth: "August 14",
+        name: "Al Amin",
+        dateOfBirth: "February 21",
+        age: "23"
     },
 
     // ========================================
