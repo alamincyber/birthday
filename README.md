@@ -2,6 +2,9 @@
 
 A beautiful, mobile-first animated birthday website built with vanilla HTML, CSS, and JavaScript. Perfect for celebrating someone special with an emotional, cinematic experience.
 
+## Live demo visit
+https://birthday.alamincyber.com
+
 ## ✨ Features
 
 - **5 Beautiful Pages** with smooth transitions
